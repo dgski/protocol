@@ -304,11 +304,3 @@ message PluginMessage {
 	uint32 version = 2;
 	string value = 3;
 }
-
-/*
-* Message Requesting New Chunk
-*/
-
-message ChunkNeeded {
-	string id = 1;
-}
