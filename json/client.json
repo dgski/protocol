@@ -195,6 +195,14 @@
           "id": 3
         }
       }
+    },
+    "ChunkNeeded": {
+      "fields": {
+        "id": {
+          "type": "string",
+          "id": 1
+        }
+      }
     }
   }
 }
