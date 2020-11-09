@@ -789,6 +789,7 @@
          * @property {number|null} [x2] ActionBlockPlace x2
          * @property {number|null} [y2] ActionBlockPlace y2
          * @property {number|null} [z2] ActionBlockPlace z2
+         * @property {number|null} [id] ActionBlockPlace id
          */
     
         /**
@@ -855,6 +856,14 @@
         ActionBlockPlace.prototype.z2 = 0;
     
         /**
+         * ActionBlockPlace id.
+         * @member {number} id
+         * @memberof ActionBlockPlace
+         * @instance
+         */
+        ActionBlockPlace.prototype.id = 0;
+    
+        /**
          * Creates a new ActionBlockPlace instance using the specified properties.
          * @function create
          * @memberof ActionBlockPlace
@@ -890,6 +899,8 @@
                 writer.uint32(/* id 5, wireType 0 =*/40).sint32(message.y2);
             if (message.z2 != null && Object.hasOwnProperty.call(message, "z2"))
                 writer.uint32(/* id 6, wireType 0 =*/48).sint32(message.z2);
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                writer.uint32(/* id 7, wireType 0 =*/56).uint32(message.id);
             return writer;
         };
     
@@ -941,6 +952,9 @@
                     break;
                 case 6:
                     message.z2 = reader.sint32();
+                    break;
+                case 7:
+                    message.id = reader.uint32();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -995,6 +1009,9 @@
             if (message.z2 != null && message.hasOwnProperty("z2"))
                 if (!$util.isInteger(message.z2))
                     return "z2: integer expected";
+            if (message.id != null && message.hasOwnProperty("id"))
+                if (!$util.isInteger(message.id))
+                    return "id: integer expected";
             return null;
         };
     
@@ -1022,6 +1039,8 @@
                 message.y2 = object.y2 | 0;
             if (object.z2 != null)
                 message.z2 = object.z2 | 0;
+            if (object.id != null)
+                message.id = object.id >>> 0;
             return message;
         };
     
@@ -1045,6 +1064,7 @@
                 object.x2 = 0;
                 object.y2 = 0;
                 object.z2 = 0;
+                object.id = 0;
             }
             if (message.x != null && message.hasOwnProperty("x"))
                 object.x = message.x;
@@ -1058,6 +1078,8 @@
                 object.y2 = message.y2;
             if (message.z2 != null && message.hasOwnProperty("z2"))
                 object.z2 = message.z2;
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
             return object;
         };
     

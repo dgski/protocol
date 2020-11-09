@@ -343,6 +343,9 @@ export interface IActionBlockPlace {
 
     /** ActionBlockPlace z2 */
     z2?: (number|null);
+
+    /** ActionBlockPlace id */
+    id?: (number|null);
 }
 
 /** Represents an ActionBlockPlace. */
@@ -371,6 +374,9 @@ export class ActionBlockPlace implements IActionBlockPlace {
 
     /** ActionBlockPlace z2. */
     public z2: number;
+
+    /** ActionBlockPlace id. */
+    public id: number;
 
     /**
      * Creates a new ActionBlockPlace instance using the specified properties.
